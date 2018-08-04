@@ -11,6 +11,8 @@ This is a PyTorch implementation of [Neural Arithmetic Logic Units](https://arxi
 ## API
 
 ```python
+from models import *
+
 # single layer modules
 NAC(in_features, out_features)
 NALU(in_features, out_features)
@@ -39,12 +41,12 @@ To reproduce "Simple Function Learning Tasks" (Section 4.1), run:
 ```python
 python function_learning.py
 ```
-This should generate a text file called `interpolation.txt` with the following results. (Currently only supports interpolation, I'm working on the rest. Also getting `nans` which I'm investigating.)
+This should generate a text file called `interpolation.txt` with the following results. (Currently only supports interpolation, I'm working on the rest)
 
 |       | Relu6    | None     | NAC      | NALU   |
 |-------|----------|----------|----------|--------|
-| a + b | 0.002    | 0.000    | 0.000    | 1.399  |
-| a - b | 0.046    | 0.000    | 0.000    | 0.224  |
-| a * b | 83.012   | 99.590   | 98.822   | 12.237 |
-| a / b | 2245.560 | 2888.195 | 2765.908 | nan    |
-| a ^ 2 | 76.126   | 99.106   | 99.559   | nan    |
+| a + b | 0.002    | 0.004    | 0.001    | 0.017  |
+| a - b | 0.046    | 0.005    | 0.000    | 0.003  |
+| a * b | 83.012   | 0.444    | 5.218    | 5.218  |
+| a / b | 106.441  | 0.338    | 2.096    | 2.096  |
+| a ^ 2 | 94.103   | 0.630    | 3.871    | 0.196  |
