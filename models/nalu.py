@@ -37,7 +37,7 @@ class NALU(nn.Module):
     def forward(self, input):
         a = self.nac(input)
         g = F.sigmoid(F.linear(input, self.G, None))
-        add_sub = a * g
+        add_sub = g * a
         log_input = torch.log(torch.abs(input) + self.eps)
         m = torch.exp(F.linear(log_input, self.W, None))
         mul_div = (1 - g) * m

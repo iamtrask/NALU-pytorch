@@ -28,13 +28,14 @@ class NAC(nn.Module):
 
         self.W_hat = Parameter(torch.Tensor(out_features, in_features))
         self.M_hat = Parameter(torch.Tensor(out_features, in_features))
-        self.W = F.tanh(self.W_hat) * F.sigmoid(self.M_hat)
+        self.W = Parameter(F.tanh(self.W_hat) * F.sigmoid(self.M_hat))
+        self.register_parameter('bias', None)
 
         init.kaiming_uniform_(self.W_hat, a=math.sqrt(5))
         init.kaiming_uniform_(self.M_hat, a=math.sqrt(5))
 
     def forward(self, input):
-        return F.linear(input, self.W, None)
+        return F.linear(input, self.W, self.bias)
 
     def extra_repr(self):
         return 'in_features={}, out_features={}'.format(self.in_features, self.out_features)
