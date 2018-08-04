@@ -11,10 +11,13 @@ TEST_RANGE = [-20, 20]
 LEARNING_RATE = 1e-2
 NUM_ITERS = int(1e4)
 NON_LINEARITIES = [
-    'hardtanh', 'sigmoid', 'relu6', 'tanh',
-    'tanhshrink', 'hardshrink', 'leakyrelu',
-    'softshrink', 'softsign', 'relu',
-    'prelu', 'softplus', 'elu', 'selu',
+    'hardtanh', 'sigmoid',
+    'relu6', 'tanh',
+    'tanhshrink', 'hardshrink',
+    'leakyrelu', 'softshrink',
+    'softsign', 'relu',
+    'prelu', 'softplus',
+    'elu', 'selu',
 ]
 
 
