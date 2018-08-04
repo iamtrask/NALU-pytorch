@@ -38,4 +38,6 @@ class NAC(nn.Module):
         return F.linear(input, self.W, self.bias)
 
     def extra_repr(self):
-        return 'in_features={}, out_features={}'.format(self.in_features, self.out_features)
+        return 'in_features={}, out_features={}'.format(
+            self.in_features, self.out_features
+        )
